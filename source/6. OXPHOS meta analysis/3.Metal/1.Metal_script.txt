@@ -1,0 +1,28 @@
+# SCHEME SAMPLESIZE        - default approach, uses p-value and direction of effect, weighted according to sample size
+# SCHEME STDERR            - classical approach, uses effect size estimates and standard errors
+# STDERR SE                - specify the label for the standard error column.
+# Define the analysis type
+SCHEME STDERR
+
+# Define the columns in the input files
+MARKER Symbol
+EFFECT log2FC
+STDERR SE
+SEPARATOR TAB
+
+# Process the first study
+PROCESS D:/R.data/OXPHOS/GSE9479_deg_2.txt
+
+# Process the second study
+PROCESS D:/R.data/OXPHOS/GSE17601_deg_2.txt
+
+# Process the third study
+PROCESS D:/R.data/OXPHOS/GSE113113_deg_2.txt
+
+OUTFILE D:/R.data/DHFR_project/6. OXPHOS meta analysis/Meta_result .tbl
+
+# Perform the meta-analysis
+ANALYZE
+
+# Quit METAL
+QUIT

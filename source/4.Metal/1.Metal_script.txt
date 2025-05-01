@@ -1,0 +1,28 @@
+# SCHEME SAMPLESIZE        - default approach, uses p-value and direction of effect, weighted according to sample size
+# SCHEME STDERR            - classical approach, uses effect size estimates and standard errors
+# STDERR SE                - specify the label for the standard error column.
+# Define the analysis type
+SCHEME STDERR
+
+# Define the columns in the input files
+MARKER Symbol
+EFFECT log2FC
+STDERR SE
+SEPARATOR TAB
+
+# Process the first study
+PROCESS GSE59307.txt
+
+# Process the second study
+PROCESS GSE113113.txt
+
+# Process the third study
+PROCESS GSE9479.txt
+
+OUTFILE D:/R.data/dhfr_project/Data/Meta_result .tbl
+
+# Perform the meta-analysis
+ANALYZE
+
+# Quit METAL
+QUIT
